@@ -114,17 +114,25 @@
 <script>
   "use strict";
 
+  var reverseStringButton = document.getElementById("reverse-string-button");
+
 //  Here's a stub of a function you can use!
 
-//  function reverseString(evt) {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+   function reverseString() {
+     var msg = "Porcupines are cute";
 
+     // do some stuff here to reverse that string into a new variable
+     var newMsg = '';
+
+     for (var i = msg.length-1; i >= 0; i--) { 
+        newMsg += msg[i];
+      }
+
+     alert(newMsg);
+   }
+
+   //event handler
+   reverseStringButton.addEventListener('click', reverseString)
 
 </script>
 
@@ -147,6 +155,31 @@
   "use strict";
   // code here for above problem
   // if user enters 5, result will be 1 + 2 + 3 + 4 + 5 = 15
+
+  //change the result rather than submitting the form
+  function sumToNResultChange(evt) {
+     evt.preventDefault();
+
+    //get the value from the form
+    var sumToNField = document.getElementById('sum-to-n-field').value;
+    
+    //set var to hold the sum
+    var newSum = 0;
+
+    //do the math
+    for (var i = Number(sumToNField); i > 0; i--) { 
+        newSum = newSum + i;
+      }
+    //get the element to change
+    var sumToNResultText = document.getElementById("sum-to-n-result");
+
+    sumToNResultText.innerHTML=String(newSum);
+  }
+
+  //event handler
+  var sumToN = document.getElementById("sum-to-n");
+
+  sumToN.addEventListener('submit', sumToNResultChange);
 
 </script>
 
