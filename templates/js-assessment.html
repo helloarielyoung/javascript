@@ -280,7 +280,6 @@
         
     //for testing
     console.log(randomNumber);
-
   }
 
   function testGuess(evt) {
@@ -296,7 +295,7 @@
       else {
          $("#number-guessing-msg").html ("That's right!  Congratulations, you have won!  Click Play to play again.")
         correctGuess();
-      }
+        }
   }
 
   function correctGuess() {   
@@ -385,9 +384,9 @@
     var target = $("#t-rex-target").val();
 
     $.post("/t-rex-attack.json", 
-        target,
-        showTRexResults);
-  } 
+            target,
+            showTRexResults);
+  }
 
   //event handler
   $("#t-rex-form").submit(postTRex);
