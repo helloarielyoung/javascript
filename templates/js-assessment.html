@@ -215,12 +215,18 @@
   // put your code here
   var dogImg = "https://s-media-cache-ak0.pinimg.com/236x/38/85/86/388586d084389a0c15f1a5726a81be11.jpg"
 
-  //function
   function changeImage() {
       $("img#kittenz-rule").attr("src", dogImg);
   }
+
   //event handler
   $("img#kittenz-rule").on("dblclick", changeImage);
+
+  // alternatively, could do this as an inline function
+  // but that seems a lot less readable to me!
+  // $("img#kittenz-rule").on("dblclick", function () {
+  //   $("img#kittenz-rule").attr("src", dogImg);});
+
 
 </script>
 
@@ -259,7 +265,7 @@
   var guess = 0
   
   function startGame() {
-    //clear guess text box if it has data in it
+    //clear guess text box
     $("#number-guessed").val('');
     //disable Play button
     $("#play-guessing-game").prop("disabled", true);
@@ -382,11 +388,6 @@
         target,
         showTRexResults);
   } 
-
-  // function test(evt) {
-  //   evt.preventDefault();
-  //   console.log("got to test far");
-  // }
 
   //event handler
   $("#t-rex-form").submit(postTRex);
