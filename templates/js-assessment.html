@@ -253,20 +253,11 @@
 <script>
   "use strict";
   // put your code here
-  //  as well as display whether guess was high or low
-  //When right number guessed:
-  //  1) congratulate
-  //  2) disable form
-  //  3) re-enable play button
 
   //global variables for the game
   var randomNumber = 0
   var guess = 0
   
-  function testAlert() {
-    alert("test alert");
-  }
-
   function startGame() {
     //clear guess text box if it has data in it
     $("#number-guessed").val('');
@@ -288,7 +279,6 @@
 
   function testGuess(evt) {
     evt.preventDefault();
-    // var test = document.getElementById('number-guessed').value;
     guess = parseInt($("#number-guessed").val());
 
       if (guess < randomNumber) {
@@ -383,7 +373,23 @@
     $("#t-rex-img").append(tRexPhoto);
   }
 
-  // put your code here
+  //submit form to /t-rex-attack.json
+  function postTRex(evt) {
+    evt.preventDefault();
+    var target = $("#t-rex-target").val();
+
+    $.post("/t-rex-attack.json", 
+        target,
+        showTRexResults);
+  } 
+
+  // function test(evt) {
+  //   evt.preventDefault();
+  //   console.log("got to test far");
+  // }
+
+  //event handler
+  $("#t-rex-form").submit(postTRex);
 
 </script>
 
