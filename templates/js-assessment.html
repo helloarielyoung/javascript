@@ -5,6 +5,7 @@
   <title>Skills JavaScript</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/styles.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body class="container">
 
@@ -212,6 +213,15 @@
 <script>
   "use strict";
   // put your code here
+  var dogImg = "https://s-media-cache-ak0.pinimg.com/236x/38/85/86/388586d084389a0c15f1a5726a81be11.jpg"
+
+  //function
+  function changeImage() {
+      $("img#kittenz-rule").attr("src", dogImg);
+  }
+  //event handler
+  $("img#kittenz-rule").on("dblclick", changeImage);
+
 </script>
 
 <div class="hint">
